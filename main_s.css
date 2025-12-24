@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display:flexbox;
+}
+
+#header{
+    height: 80px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+#lnav{
+    height: calc(100vh - 80px);
+    width: 250px;
+    border: 2px solid black;
+    position: fixed;
+}
+#mainbody{
+    display: flex;
+    flex-direction: row;
+}
+
+#content{
+    height: calc(100vh - 80px);
+    width: calc(100% - 250px);
+    border: 2px solid black;
+}
+#addBtn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+    right:15px;
+    bottom: 15px;
+    position:fixed;
+}
+
+.theory{
+    border: 2px solid black;
+    margin: 10px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 100px;
+    height: 300px;
+    width: 800px;
+    border-radius: 10px;
+}

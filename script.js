@@ -32,3 +32,7 @@ $(document).ready(function () {
     });
 
 });
+
+$("#al").click(function() {
+    alert("Opening the gates of the realm...");
+});
