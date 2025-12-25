@@ -35,11 +35,11 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: red;
+    /* background: red; */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .navbar nav a {
     margin:  15px;
