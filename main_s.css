@@ -1,49 +1,114 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display:flexbox;
+    font-family: 'Segoe UI', sans-serif;
 }
-
-#header{
-    height: 80px;
-    width: 100%;
-    border: 2px solid black;
+/* BACKGROUND WITHOUT IMAGE */
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, #ff003366, transparent 40%),
+        radial-gradient(circle at 80% 80%, #0066ff55, transparent 40%),
+        linear-gradient(180deg, #05010d, #0a0218);
+    color: white;
 }
-
-#lnav{
-    height: calc(100vh - 80px);
-    width: 250px;
-    border: 2px solid black;
-    position: fixed;
-}
-#mainbody{
+/* NAVBAR */
+.navbar {
+    height: 70px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
-#content{
-    height: calc(100vh - 80px);
-    width: calc(100% - 250px);
-    border: 2px solid black;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-#addBtn{
-    height: 50px;
-    width: 50px;
+.logo-text {
+     font-family: 'Cinzel', serif;
+}
+.logo-icon {
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    border: 2px solid black;
-    right:15px;
-    bottom: 15px;
-    position:fixed;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.navbar nav a {
+    margin:  15px;
+    text-decoration: none;
+    color: #ddd;
+}
+.search-box {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+/* LAYOUT */
+.container {
+    display: flex;
+    height: calc(100vh - 70px);
 }
 
-.theory{
-    border: 2px solid black;
-    margin: 10px;
-    position: relative;
-    margin-left: 100px;
-    margin-top: 100px;
-    height: 300px;
-    width: 800px;
-    border-radius: 10px;
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    padding: 40px 20px;
+}
+.sidebar a {
+    display: block;
+    margin-bottom: 20px;/*gap between the words*/
+    color: #ccc;
+    text-decoration: none;
+}
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+/* GLASS CARDS */
+.card {
+    height: 500px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+/* GLOW EFFECTS */
+.red-glow {
+    box-shadow: 0 0 25px rgba(255,0,0,0.5);
+}
+
+.blue-glow {
+    box-shadow: 0 0 25px rgba(0,120,255,0.5);
+}
+/* FLOAT BUTTON */
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px red;
 }

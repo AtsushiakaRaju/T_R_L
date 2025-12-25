@@ -2,20 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Realm of Lost Lores</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="main_s.css">
 </head>
 <body>
-    <div id="header"></div>
-    <div id="mainbody">
-        <div id="lnav"></div>
-        <div id="content">
-            <div class="theory"></div>
-            <div class="theory"></div>
-            <div class="theory"></div>
-            <div id="addBtn"></div>
-        </div>    
+    <!-- NAVBAR / HEADER-->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">R</span>
+            <span class="logo-text">THE REALM OF LOST LORES</span>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Community</a>
+        </nav>
+        <input type="text" placeholder="Search" class="search-box">
+    </header>
+    <!-- MAIN LAYOUT -->
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <a href="#">Science</a>
+            <a href="#">Aliens</a>
+            <a href="#">Human Origin</a>
+            <a href="#">See All</a>
+        </aside>
+        <!-- CONTENT -->
+        <main class="content">
+            <div class="card red-glow">Theory - 1</div>
+            <div class="card blue-glow">Theory - 2</div>
+        </main>
     </div>
+    <!-- ADD BUTTON -->
+    <div class="add-btn">+</div>
 </body>
 </html>

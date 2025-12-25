@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     let selectedCount = 0;
-    const maxSelect = 5;
+    const maxSelect = 3;
 
     $(".topic").click(function () {
 
@@ -15,7 +15,7 @@ $(document).ready(function () {
             }
         }
 
-        $(".counter").text(`${selectedCount} / 5 tuned`);
+        $(".counter").text(`${selectedCount} / 3 tuned`);
 
         if (selectedCount === maxSelect) {
             $(".enter-btn").addClass("active").prop("disabled", false);
@@ -26,13 +26,9 @@ $(document).ready(function () {
 
     $(".enter-btn").click(function () {
         if ($(this).hasClass("active")) {
-            alert("Opening the gates of the realm...");
+            window.location.href = "main.html";
             // next step: transition animation / fake loading screen
         }
     });
 
-});
-
-$("#al").click(function() {
-    alert("Opening the gates of the realm...");
 });
