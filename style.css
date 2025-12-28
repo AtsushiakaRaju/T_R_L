@@ -6,9 +6,7 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Inter', sans-serif;
-    background:
-        radial-gradient(circle at top, #1a1f3c, #0b0d12 70%),
-        url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-image: url("assets/background.png");
     color: #e6e6e6;
     display: flex;
     justify-content: center;

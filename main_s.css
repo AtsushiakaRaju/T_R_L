@@ -4,16 +4,16 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
 }
+
 /* BACKGROUND WITHOUT IMAGE */
 body {
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 20%, #ff003366, transparent 40%),
-        radial-gradient(circle at 80% 80%, #0066ff55, transparent 40%),
-        linear-gradient(180deg, #05010d, #0a0218);
+    background-image: url("assets/background.png");
     color: white;
+    overflow: hidden; /* Prevents body scroll, we scroll .content instead */
 }
+
 /* NAVBAR */
 .navbar {
     height: 70px;
@@ -23,36 +23,72 @@ body {
     padding: 0 40px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .logo-text {
      font-family: 'Cinzel', serif;
+     font-size: x-large;
 }
+
 .logo-icon {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    /* background: red; */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* font-weight: bold; */
 }
+
 .navbar nav a {
+    padding-left: 25px;
     margin:  15px;
     text-decoration: none;
     color: #ddd;
 }
+
 .search-box {
+    width: 200px;
     padding: 8px 15px;
     border-radius: 20px;
     border: none;
     background: rgba(255,255,255,0.1);
     color: white;
 }
+
+/* DIVIDERS */
+.divider {
+  background: linear-gradient(
+    90deg,
+    rgba(139,30,45,0.8),
+    rgba(43,108,255,0.8)
+  );
+  box-shadow:
+    0 0 12px rgba(139,30,45,0.4),
+    0 0 12px rgba(43,108,255,0.4);
+  opacity: 0.85;
+}
+
+.divider.horizontal {
+  height: 1.5px;
+  width: 100%;
+  margin: 0;
+}
+
+.divider.vertical {
+  width: 1.5px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(139,30,45,0.8),
+    rgba(43,108,255,0.8)
+  );
+}
+
 /* LAYOUT */
 .container {
     display: flex;
@@ -64,39 +100,139 @@ body {
     width: 220px;
     padding: 40px 20px;
 }
+
 .sidebar a {
     display: block;
-    margin-bottom: 20px;/*gap between the words*/
+    margin-bottom: 20px;
     color: #ccc;
     text-decoration: none;
+    transition: color 0.3s;
 }
-/* CONTENT */
+
+.sidebar a:hover {
+    color: white;
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+/* CONTENT AREA - SCROLLABLE */
 .content {
     flex: 1;
     padding: 60px;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    
+    /* Enables scrolling within this div */
+    overflow-y: auto; 
+    height: 100%;
+    position: relative;
 }
-/* GLASS CARDS */
+
+/* Custom Scrollbar Styling */
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+.content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+.content::-webkit-scrollbar-thumb {
+    background: rgba(139, 30, 45, 0.8); /* Red tint */
+    border-radius: 4px;
+}
+
+/* CARD STYLES */
 .card {
-    height: 500px;
+    min-height: 500px;          /* FORCE default height */
+    overflow: hidden;       /* Hide extra content */
     border-radius: 15px;
     background: rgba(255,255,255,0.05);
+    padding: 40px;
+    position: relative;
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    letter-spacing: 1px;
+    flex-direction: column;
+
+    transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+
+/* EXPANDED STATE (Toggled by Script) */
+.card.expanded {
+    min-height: 2000px ; /* Overrides the 500px limit */
+    /* min-height: 500px; */
+}
+
+/* Typography inside Cards */
+.card h2 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.card .theory-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    width: 100%;
+}
+
+.card .theory-text p {
+    margin-bottom: 15px;
+}
+
+/* READ MORE BUTTON / FADE EFFECT */
+.read-more-trigger {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Height of the fade gradient */
+    
+    /* Gradient: Transparent at top -> Dark at bottom */
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, transparent);
+    
+    /* Center the text at the bottom */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: #ff6b6b; /* Accent color */
+    transition: color 0.3s;
+}
+
+.read-more-trigger:hover {
+    color: #ff4040;
+}
+
+/* Button style when card is expanded */
+.card.expanded .read-more-trigger {
+    background: rgba(0,0,0,0.5); /* Solid background strip instead of gradient */
+    height: 60px;
+    position: relative; /* Moves to bottom of flow naturally */
+    margin-top: 30px;
+    border-radius: 0 0 15px 15px; /* Matches card bottom corners */
+}
+
 /* GLOW EFFECTS */
 .red-glow {
-    box-shadow: 0 0 25px rgba(255,0,0,0.5);
+    box-shadow: 0 0 25px rgba(255,0,0,0.2);
+    border: 1px solid rgba(255,0,0,0.1);
 }
 
 .blue-glow {
-    box-shadow: 0 0 25px rgba(0,120,255,0.5);
+    box-shadow: 0 0 25px rgba(0,120,255,0.2);
+    border: 1px solid rgba(0,120,255,0.1);
 }
+
 /* FLOAT BUTTON */
 .add-btn {
     position: fixed;
@@ -105,10 +241,42 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255,0,0,0.2);
+    background: rgba(139,30,45,0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px rgba(139,30,45,0.6);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
 }
+
+.add-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ... (Keep existing CSS) ... */
+
+/* LAYOUT - Updated for Scroll Fix */
+.container {
+    display: flex;
+    height: calc(100vh - 70px); /* Strict height limit */
+    overflow: hidden; /* Prevents the whole page from scrolling */
+}
+
+/* CONTENT - Updated for Scroll Fix */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px;
+    
+    /* THESE ARE THE CRITICAL FIXES: */
+    overflow-y: auto;  /* scrollbar logic */
+    height: 100%;      /* fill the container */
+    min-height: 0;     /* Flexbox scrolling magic fix */
+}
+
+/* ... (Keep existing CSS) ... */
