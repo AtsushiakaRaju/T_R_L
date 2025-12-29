@@ -93,7 +93,7 @@ The content is used strictly for **educational and exploratory purposes** and do
 ---
 
 ## 🔗 Live Execution Link
-After deployment, the project will be accessible at:
+The live execution can be seen here at this link.
 
 [https://atsushiakaraju.github.io/T_R_L/]
 
