@@ -89,17 +89,6 @@ script_m.js
 The information presented in this project is collected from publicly available sources such as **Wikipedia** and other open resources.  
 The content is used strictly for **educational and exploratory purposes** and does not intend to promote misinformation or validate speculative theories.
 
----
-
-## 🚀 Deployment (GitHub Pages)
-
-### Steps to Deploy:
-1. Push the project to a GitHub repository
-2. Go to **Repository → Settings → Pages**
-3. Under **Source**, select:
-   - Branch: `main`
-   - Folder: `/root`
-4. Save the settings
 
 ---
 
