@@ -69,9 +69,9 @@ This project is developed as part of the **Web Technologies** course.
 ---
 
 ## 📁 Project Structure
-/assets
-  ├── background.png
-  ├── logo.jpeg
+/assets<br>
+  ├── background.png<br>
+  ├── logo.jpeg<br>
 
 index.html
 style.css
